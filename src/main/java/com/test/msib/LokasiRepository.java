@@ -8,7 +8,10 @@ import com.test.msib.Lokasi;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 /**
+ * The LokasiRepository interface extends the JpaRepository interface
+ * and provides methods for interacting with the Lokasi entity.
  *
  * @author user
  */
-public interface LokasiRepository extends JpaRepository<Lokasi, Long> {}
+public interface LokasiRepository extends JpaRepository<Lokasi, Long> {
+}

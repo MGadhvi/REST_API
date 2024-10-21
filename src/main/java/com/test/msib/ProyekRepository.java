@@ -7,8 +7,9 @@ package com.test.msib;
 import com.test.msib.Proyek;
 import org.springframework.data.jpa.repository.JpaRepository;
 
-
 /**
+ * The ProyekRepository interface extends the JpaRepository interface
+ * and provides methods for interacting with the Proyek entity.
  *
  * @author user
  */
