@@ -13,31 +13,66 @@ import java.sql.Timestamp;
 import java.time.LocalDateTime;
 import java.util.List;
 
+/**
+ * The Proyek class represents a project entity in the application.
+ * It is mapped to the "proyek" table in the database.
+ *
+ * @author user
+ */
 @Entity
 @Table(name = "proyek")
 public class Proyek {
+
+    /**
+     * The unique identifier for the project.
+     */
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    /**
+     * The name of the project.
+     */
     @Column(name = "nama_proyek")
     private String namaProyek;
+
+    /**
+     * The client of the project.
+     */
     private String client;
 
+    /**
+     * The start date of the project.
+     */
     @Column(name = "tgl_mulai")
     private LocalDateTime tglMulai;
 
+    /**
+     * The end date of the project.
+     */
     @Column(name = "tgl_selesai")
     private LocalDateTime tglSelesai;
 
+    /**
+     * The project manager of the project.
+     */
     @Column(name = "pimpinan_proyek")
     private String pimpinanProyek;
 
+    /**
+     * The description of the project.
+     */
     private String keterangan;
 
+    /**
+     * The timestamp when the project was created.
+     */
     @Column(name = "created_at", updatable = false)
     private Timestamp createdAt;
 
+    /**
+     * The list of locations associated with the project.
+     */
     @ManyToMany
     @JoinTable(
         name = "proyek_lokasi",
@@ -45,6 +80,8 @@ public class Proyek {
         inverseJoinColumns = @JoinColumn(name = "lokasi_id")
     )
     private List<Lokasi> lokasi;
+
+    // Getters and Setters
 
     public Long getId() {
         return id;
